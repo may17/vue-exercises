@@ -13,6 +13,7 @@
 <script>
 export default {
   name: "Counter",
+  emits: ["countUp"],
   props: {
     title: {
       type: String,
@@ -45,6 +46,7 @@ export default {
   methods: {
     increase() {
       this.result++;
+      this.$emit("countUp", this.title);
     },
   },
 };
